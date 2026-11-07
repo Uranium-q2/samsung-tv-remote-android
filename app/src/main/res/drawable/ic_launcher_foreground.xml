@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- remote body -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M42,26h24a4,4 0 0 1 4,4v48a4,4 0 0 1 -4,4h-24a4,4 0 0 1 -4,-4v-48a4,4 0 0 1 4,-4z" />
+    <!-- power button -->
+    <path
+        android:fillColor="#FFB02A2A"
+        android:pathData="M54,31a4,4 0 1 0 0.01,0z" />
+    <!-- OK button -->
+    <path
+        android:fillColor="#FF3A5FCD"
+        android:pathData="M54,49a7,7 0 1 0 0.01,0z" />
+    <!-- button grid -->
+    <path
+        android:fillColor="#FF9AA4AF"
+        android:pathData="M44,62h8v5h-8zM56,62h8v5h-8zM44,70h8v5h-8zM56,70h8v5h-8z" />
+</vector>
