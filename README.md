@@ -23,7 +23,29 @@ app/src/main/java/com/example/samsungtvremote/
 ```
 
 ## Build
-Open the folder in Android Studio and run, or `./gradlew assembleDebug`.
+Requirements: Android Studio (or JDK 17+) and the Android SDK 37.
+
+**Android Studio:** open the project folder, wait for the Gradle sync, connect a phone with USB debugging
+(or start an emulator) and press **Run**.
+
+**Command line:**
+```
+# Windows (PowerShell)
+$env:JAVA_HOME="C:\Program Files\Android\Android Studio\jbr"   # if your default java is older than 17
+.\gradlew.bat assembleDebug      # APK: appuild\outputspk\debugpp-debug.apk
+.\gradlew.bat installDebug       # build and install on a connected phone
+
+# macOS / Linux
+./gradlew assembleDebug
+./gradlew installDebug
+```
+Create a `local.properties` file with `sdk.dir=<path to your Android SDK>` if Gradle cannot find the SDK
+(Android Studio creates it automatically).
+
+Run the unit tests with `.\gradlew.bat testDebugUnitTest`.
+
+## Install the APK without a computer
+Copy `app-debug.apk` to the phone, open it and allow installing from unknown sources.
 
 ## Limitations
 Samsung TVs do not expose a screen stream over the network, so this app cannot show the TV picture.
