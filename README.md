@@ -32,7 +32,7 @@ Requirements: Android Studio (or JDK 17+) and the Android SDK 37.
 ```
 # Windows (PowerShell)
 $env:JAVA_HOME="C:\Program Files\Android\Android Studio\jbr"   # if your default java is older than 17
-.\gradlew.bat assembleDebug      # APK: appuild\outputspk\debugpp-debug.apk
+.\gradlew.bat assembleDebug      # APK: app\build\outputs\apk\debug\app-debug.apk
 .\gradlew.bat installDebug       # build and install on a connected phone
 
 # macOS / Linux
