@@ -16,12 +16,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import com.example.samsungtvremote.R
 import com.example.samsungtvremote.ui.theme.KeyGap
-import com.example.samsungtvremote.ui.theme.TextMuted
 
-/** IP field, Connect button and connection status. */
+/** Fallback for when scanning does not find the TV: type its IP address. */
 @Composable
-fun ConnectionBar(initialIp: String, status: String, onConnect: (String) -> Unit) {
-    var ip by remember { mutableStateOf(initialIp) }
+fun ManualConnect(initialIp: String, onConnect: (String) -> Unit) {
+    var ip by remember(initialIp) { mutableStateOf(initialIp) }
     Row(horizontalArrangement = KeyGap, verticalAlignment = Alignment.CenterVertically) {
         OutlinedTextField(
             value = ip,
@@ -35,5 +34,4 @@ fun ConnectionBar(initialIp: String, status: String, onConnect: (String) -> Unit
             Text(stringResource(R.string.connect))
         }
     }
-    Text(status, color = TextMuted)
 }

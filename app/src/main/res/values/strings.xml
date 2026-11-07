@@ -1,6 +1,17 @@
 <resources>
     <string name="app_name">TV Remote</string>
+    <string name="tab_remote">Remote</string>
+    <string name="tab_settings">Settings</string>
     <string name="ip_label">TV IP address</string>
     <string name="connect">Connect</string>
+    <string name="connected">Connected</string>
+    <string name="connected_to">Connected to %1$s</string>
     <string name="status_idle">Not connected</string>
+    <string name="not_connected_hint">Not connected. Open Settings to find your TV.</string>
+    <string name="nearby_tvs">TVs on your network</string>
+    <string name="scanning">Searching for TVs…</string>
+    <string name="scan_again">Search again</string>
+    <string name="no_tvs_found">No TVs found. Make sure the TV is on and on the same WiFi, or enter its IP below.</string>
+    <string name="manual_title">Connect manually</string>
+    <string name="forget_tv">Forget this TV</string>
 </resources>

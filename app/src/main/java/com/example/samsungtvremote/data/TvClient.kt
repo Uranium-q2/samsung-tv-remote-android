@@ -17,6 +17,7 @@ import javax.net.ssl.X509TrustManager
 class TvClient(
     private val onStatus: (String) -> Unit,
     private val onToken: (String) -> Unit,
+    private val onConnection: (Boolean) -> Unit = {},
 ) {
     // The TV uses a self-signed certificate, so we accept it (home network only).
     private val trustAll = object : X509TrustManager {
@@ -37,7 +38,10 @@ class TvClient(
 
     @Volatile
     var connected = false
-        private set
+        private set(value) {
+            field = value
+            onConnection(value)
+        }
 
     fun connect(ip: String, token: String?) {
         disconnect()
@@ -60,11 +64,13 @@ class TvClient(
             }
 
             override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
+                if (webSocket !== socket) return // stale socket from a previous connection
                 connected = false
                 onStatus("Error: ${t.message ?: "connection failed"}")
             }
 
             override fun onClosed(webSocket: WebSocket, code: Int, reason: String) {
+                if (webSocket !== socket) return // stale socket from a previous connection
                 connected = false
                 onStatus("Disconnected")
             }
